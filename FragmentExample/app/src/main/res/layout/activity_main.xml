@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnmap"
+        android:background="#44ddd7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:textColor="#000"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:onClick="process"
+
+        />
+
+    <Button
+        android:id="@+id/btnMarket"
+        android:background="#44ddd7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Market"
+        android:textColor="#000"
+        android:onClick="process"
+        android:layout_below="@+id/btnmap"
+        android:layout_alignLeft="@+id/btnmap"
+        android:layout_alignStart="@+id/btnmap"
+        android:layout_marginTop="59dp" />
+
+    <Button
+        android:id="@+id/btnEmail"
+        android:background="#44ddd7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Email"
+        android:textColor="#000"
+        android:onClick="process"
+        android:layout_below="@+id/btnMarket"
+        android:layout_alignLeft="@+id/btnmap"
+        android:layout_alignStart="@+id/btnmap"
+        android:layout_marginTop="59dp" />
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    tools:context="com.example.faiz.fragmentexample.BlankFragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView android:layout_width="match_parent"
+        android:textSize="34sp"
+        android:layout_height="match_parent"
+        android:text="Frag 2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frag 1"
+        android:id="@+id/buttonInFrag2"
+        android:layout_gravity="right|center_vertical" />
+
+</FrameLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+   <ImageView
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+        android:layout_margin="5dp"
+       android:id="@+id/imageViewR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="#000"
+        android:textSize="22dp"
+
+        android:id="@+id/textViewR"
+
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageViewR"
+        android:layout_toEndOf="@+id/imageViewR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Msg"
+        android:textSize="15dp"
+        android:id="@+id/textViewR2"
+        android:layout_below="@+id/textViewR"
+        android:layout_toRightOf="@+id/imageViewR"
+        android:layout_toEndOf="@+id/imageViewR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewRtime"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_below="@+id/textViewR"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

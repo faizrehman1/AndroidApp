@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000"
+    >
+
+    <EditText
+        android:id="@+id/textViewMessagesName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="Name"
+        android:background="#fff"
+
+        android:textColor="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        />
+
+    <EditText
+        android:id="@+id/textView2Messagesmsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="Message"
+        android:background="#fff"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+
+
+        android:layout_below="@+id/textViewMessagesName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
