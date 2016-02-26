@@ -52,7 +52,9 @@ public class MainActivity extends Activity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Model model=savedInstanceState.getParcelable("ghg");
-        
+        String ab = model.getName();
+        int abb=model.getId();
+        Log.d("value",ab+" "+abb);
 
         String faiz = savedInstanceState.getString("save_state");
 
