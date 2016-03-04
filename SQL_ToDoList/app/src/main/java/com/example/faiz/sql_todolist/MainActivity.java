@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                          //   arrayList.add(new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0));
                             ToDoObjects toDoObjects = new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0);
                             arrayList.add(toDoObjects);
-                            db.saveData(arrayList);
+                           db.saveData(arrayList);
 
                             adapter.notifyDataSetChanged();
                             //   db.getData();
@@ -91,9 +91,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void getTodo(){
         listView= (ListView) findViewById(R.id.listvieww);
+      //  arrayList.add(new ToDoObjects("adsa","asd",true,0));
+       // Log.d("LOL", String.valueOf(arrayList));
+        arrayList = db.getData();
         adapter = new MyAdapter(arrayList,MainActivity.this);
 
-        arrayList = db.getData();
+
         listView.setAdapter(adapter);
     }
 

@@ -34,10 +34,12 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String createTable= "CREATE TABLE " + TABLE_Name + "("
-                + PERSON_ID + " INTEGER PRIMARY KEY," + PERSON_TITLE + " TEXT,"
-                + PERSON_DISCRIPTION + " TEXT," + PERSON_STATUS + " TEXT" + ")";
-        db.execSQL(createTable);
+//        String createTable= "CREATE TABLE " + TABLE_Name + "("
+//                + PERSON_ID + " INTEGER PRIMARY KEY," + PERSON_TITLE + " TEXT,"
+//                + PERSON_DISCRIPTION + " TEXT," + PERSON_STATUS + " TEXT" + ")";
+        String sql = String.format("create table %s (%s INTEGER primary key AUTOINCREMENT,%s TEXT not null, %s TEXT , %s TEXT )", TABLE_Name, PERSON_ID, PERSON_TITLE, PERSON_DISCRIPTION,PERSON_STATUS);
+
+        db.execSQL(sql);
 
 
     }
@@ -75,7 +77,7 @@ public class Database extends SQLiteOpenHelper {
         ArrayList<ToDoObjects> arrayList = new ArrayList<>();
 
         SQLiteDatabase db = getReadableDatabase();
-        String sql = String.format("select %s,%s,%s,%s from %s order by %s", PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION ,PERSON_STATUS,TABLE_Name,PERSON_ID);
+        String sql = String.format("select %s,%s,%s,%s from %s order by %s",PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION ,PERSON_STATUS,TABLE_Name,PERSON_ID);
         Cursor cursor = db.rawQuery(sql,null);
 
         while(cursor.moveToNext()){
