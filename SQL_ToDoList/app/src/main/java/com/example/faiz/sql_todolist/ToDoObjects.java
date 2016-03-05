@@ -6,22 +6,6 @@ public class ToDoObjects {
     private Boolean check;
     private int id;
 
-    public Boolean getCheck() {
-        return check;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setCheck(Boolean check) {
-        this.check = check;
-    }
-
     public ToDoObjects(String title, String discription, Boolean check, int id) {
         this.title = title;
         this.discription = discription;
@@ -43,5 +27,21 @@ public class ToDoObjects {
 
     public void setDiscription(String discription) {
         this.discription = discription;
+    }
+
+    public Boolean getCheck() {
+        return check;
+    }
+
+    public void setCheck(Boolean check) {
+        this.check = check;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

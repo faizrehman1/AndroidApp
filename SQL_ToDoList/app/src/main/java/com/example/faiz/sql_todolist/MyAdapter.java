@@ -10,10 +10,11 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends BaseAdapter implements ListAdapter {
 
-    ArrayList<ToDoObjects> arrayList;
+    List<ToDoObjects> arrayList;
     Context context;
 
     @Override
@@ -28,10 +29,10 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return arrayList.get(position).getId();
     }
 
-    public MyAdapter(ArrayList<ToDoObjects> arrayList, Context context) {
+    public MyAdapter(List<ToDoObjects> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }

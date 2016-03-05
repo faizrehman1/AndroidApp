@@ -18,10 +18,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<ToDoObjects> arrayList = new ArrayList<>();
+    private List<ToDoObjects> arrayList = new ArrayList<ToDoObjects>();
     private MyAdapter adapter;
 
     private Database db = new Database(this);
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // collect(arrayList);
-            getTodo();
+            GetTodo();
             addItems();
 
         //arrayList.add(new ToDoObjects("LOL", "Hahaaha", false));
@@ -59,9 +60,13 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                          //   arrayList.add(new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0));
-                            ToDoObjects toDoObjects = new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0);
-                            arrayList.add(toDoObjects);
-                           db.saveData(arrayList);
+                           // String title = edt.getText().toString();
+                          //  String msg = edt1.getText().toString();
+                         //   boolean read = check.isChecked();
+                            ToDoObjects email = new ToDoObjects(edt.getText().toString(),edt1.getText().toString(),check.isChecked(),0);
+                            arrayList.add(email);
+                            Log.d("haha", String.valueOf(arrayList));
+                            db.saveData(email);
 
                             adapter.notifyDataSetChanged();
                             //   db.getData();
@@ -89,15 +94,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void getTodo(){
+    private void GetTodo(){
+
         listView= (ListView) findViewById(R.id.listvieww);
-      //  arrayList.add(new ToDoObjects("adsa","asd",true,0));
-       // Log.d("LOL", String.valueOf(arrayList));
-        arrayList = db.getData();
-        adapter = new MyAdapter(arrayList,MainActivity.this);
+//        arrayList = db.getData();
+        arrayList.add(new ToDoObjects("Kamran", "My name is Kamran",false,0));
+
+
+
+        adapter = new MyAdapter(arrayList, this);
 
 
         listView.setAdapter(adapter);
+
     }
 
 

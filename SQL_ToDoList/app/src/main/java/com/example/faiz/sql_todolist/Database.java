@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -37,7 +38,7 @@ public class Database extends SQLiteOpenHelper {
 //        String createTable= "CREATE TABLE " + TABLE_Name + "("
 //                + PERSON_ID + " INTEGER PRIMARY KEY," + PERSON_TITLE + " TEXT,"
 //                + PERSON_DISCRIPTION + " TEXT," + PERSON_STATUS + " TEXT" + ")";
-        String sql = String.format("create table %s (%s INTEGER primary key AUTOINCREMENT,%s TEXT not null, %s TEXT , %s TEXT )", TABLE_Name, PERSON_ID, PERSON_TITLE, PERSON_DISCRIPTION,PERSON_STATUS);
+        String sql = String.format("create table %s (%s INTEGER primary key AUTOINCREMENT,%s TEXT not null, %s TEXT , %s TEXT )",TABLE_Name,PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION,PERSON_STATUS);
 
         db.execSQL(sql);
 
@@ -49,45 +50,42 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public boolean saveData(ArrayList<ToDoObjects> arrayList){
+    public void saveData(ToDoObjects arrayList){
         SQLiteDatabase db = getWritableDatabase();
 
 
-        db.delete(TABLE_Name, null, null);
+      //  db.delete(TABLE_Name, null, null);
 
-        int i=0;
-        for(ToDoObjects data: arrayList){
-            ContentValues values = new ContentValues();
-            values.put(PERSON_ID,i);
-            values.put(PERSON_TITLE,data.getTitle());
-            values.put(PERSON_DISCRIPTION, data.getDiscription());
-            values.put(PERSON_STATUS,data.getCheck());
+          ContentValues values = new ContentValues();
+            values.put(PERSON_ID,arrayList.getId());
+            values.put(PERSON_TITLE,arrayList.getTitle());
+            values.put(PERSON_DISCRIPTION, arrayList.getDiscription());
+            values.put(PERSON_STATUS, arrayList.getCheck());
 
             db.insert(TABLE_Name, null, values);
-            i++;
 
-            Log.d("abid",i+" "+data.getTitle()+" "+data.getDiscription()+" "+data.getCheck());
-        }
+
+            Log.d("abid", arrayList.getTitle() + " " + arrayList.getDiscription() + " " + arrayList.getCheck());
+
 
         db.close();
-    return true;
+
     }
 
-    public ArrayList<ToDoObjects> getData(){
-        ArrayList<ToDoObjects> arrayList = new ArrayList<>();
+    public List<ToDoObjects> getData(){
+        List<ToDoObjects> arrayList = new ArrayList<ToDoObjects>();
 
         SQLiteDatabase db = getReadableDatabase();
-        String sql = String.format("select %s,%s,%s,%s from %s order by %s",PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION ,PERSON_STATUS,TABLE_Name,PERSON_ID);
-        Cursor cursor = db.rawQuery(sql,null);
+        String sql = String.format("select %s,%s,%s,%s from %s order by %s",PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION,PERSON_STATUS,TABLE_Name,PERSON_ID);
+        Cursor cursor = db.rawQuery(sql, null);
 
-        while(cursor.moveToNext()){
-            int id =cursor.getInt(0);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
             String title = cursor.getString(1);
-            String discription = cursor.getString(2);
-            boolean bol = Boolean.parseBoolean(cursor.getString(3));
-
-            arrayList.add(new ToDoObjects(title,discription,bol,id));
-            Log.d("lol",title+" "+discription+" "+bol+" ");
+            String msg = cursor.getString(2);
+            String checkBoxx = cursor.getString(3);
+            Log.d("ID is ", "MSG:" + id);
+            arrayList.add(new ToDoObjects(title, msg,Boolean.valueOf(checkBoxx),id));
         }
 
 
