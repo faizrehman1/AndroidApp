@@ -68,9 +68,9 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view= inflater.inflate(R.layout.fragment_first, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.textView);
+    //    TextView textView = (TextView) view.findViewById(R.id.textView);
 //        Button changeButton = (Button) view.findViewById(R.id.buttonToChangeFrag);
-        textView.setText(mParam1);
+  //      textView.setText(mParam1);
 //        changeButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
