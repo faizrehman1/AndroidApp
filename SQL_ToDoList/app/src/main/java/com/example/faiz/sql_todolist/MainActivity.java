@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<ToDoObjects> arrayList = new ArrayList<ToDoObjects>();
+    private List<ToDoObjects> arrayList = new ArrayList<>();
     private MyAdapter adapter;
 
     private Database db = new Database(this);
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         // collect(arrayList);
             GetTodo();
             addItems();
+
+
 
         //arrayList.add(new ToDoObjects("LOL", "Hahaaha", false));
     }
@@ -59,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
                     alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                         //   arrayList.add(new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0));
-                           // String title = edt.getText().toString();
-                          //  String msg = edt1.getText().toString();
-                         //   boolean read = check.isChecked();
-                            ToDoObjects email = new ToDoObjects(edt.getText().toString(),edt1.getText().toString(),check.isChecked(),0);
+                            //   arrayList.add(new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0));
+                            // String title = edt.getText().toString();
+                            //  String msg = edt1.getText().toString();
+                            //   boolean read = check.isChecked();
+                            ToDoObjects email = new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0);
                             arrayList.add(email);
                             Log.d("haha", String.valueOf(arrayList));
                             db.saveData(email);
@@ -87,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+
+
         }
 
 
@@ -96,9 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void GetTodo(){
 
+       arrayList = db.getData();
+//        adapter.notifyDataSetChanged();
         listView= (ListView) findViewById(R.id.listvieww);
-//        arrayList = db.getData();
-        arrayList.add(new ToDoObjects("Kamran", "My name is Kamran",false,0));
+     //   arrayList = db.getData();
+     //   arrayList.add(new ToDoObjects("Faiz", "Android Developer",false,0));
 
 
 

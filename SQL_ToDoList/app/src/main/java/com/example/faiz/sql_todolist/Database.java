@@ -57,7 +57,7 @@ public class Database extends SQLiteOpenHelper {
       //  db.delete(TABLE_Name, null, null);
 
           ContentValues values = new ContentValues();
-            values.put(PERSON_ID,arrayList.getId());
+           // values.put(PERSON_ID,arrayList.getId());
             values.put(PERSON_TITLE,arrayList.getTitle());
             values.put(PERSON_DISCRIPTION, arrayList.getDiscription());
             values.put(PERSON_STATUS, arrayList.getCheck());
@@ -76,20 +76,27 @@ public class Database extends SQLiteOpenHelper {
         List<ToDoObjects> arrayList = new ArrayList<ToDoObjects>();
 
         SQLiteDatabase db = getReadableDatabase();
-        String sql = String.format("select %s,%s,%s,%s from %s order by %s",PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION,PERSON_STATUS,TABLE_Name,PERSON_ID);
+        String sql = String.format("select %s,%s,%s,%s from %s order by %s", PERSON_ID, PERSON_TITLE, PERSON_DISCRIPTION, PERSON_STATUS, TABLE_Name, PERSON_ID);
         Cursor cursor = db.rawQuery(sql, null);
 
+      //  int i=0;
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String title = cursor.getString(1);
             String msg = cursor.getString(2);
             String checkBoxx = cursor.getString(3);
-            Log.d("ID is ", "MSG:" + id);
+            Log.d("ID is ", "Msg:" + id);
             arrayList.add(new ToDoObjects(title, msg,Boolean.valueOf(checkBoxx),id));
+
+       // i++;
         }
 
 
         db.close();
         return arrayList;
     }
+
+    public void deleteItem(int pos){
+        this.getWritableDatabase().delete(TABLE_Name,PERSON_ID+"="+pos,null);
+   }
 }

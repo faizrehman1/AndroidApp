@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ef3b25"
+
+    tools:context="com.example.faiz.fragment_to_fragment.FirstFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:text="HelloFirst Frag"
+        android:layout_gravity="center_horizontal|bottom"
+
+
+         />
+
+
+</FrameLayout>
