@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // collect(arrayList);
+
             GetTodo();
 
             addItems();
 
 
 
-        //arrayList.add(new ToDoObjects("LOL", "Hahaaha", false));
+
     }
        private void addItems() {
 
@@ -64,11 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //   arrayList.add(new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0));
-                            // String title = edt.getText().toString();
-                            //  String msg = edt1.getText().toString();
-                            //   boolean read = check.isChecked();
-                            ToDoObjects email = new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0);
+                             ToDoObjects email = new ToDoObjects(edt.getText().toString(), edt1.getText().toString(), check.isChecked(), 0);
                             arrayList.add(email);
                             Log.d("haha", String.valueOf(arrayList));
                             db.saveData(email);
@@ -97,12 +93,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void GetTodo(){
 
-     //  arrayList = db.getData();
-//        adapter.notifyDataSetChanged();
+
         listView= (ListView) findViewById(R.id.listvieww);
         arrayList = db.getData();
-     //   arrayList.add(new ToDoObjects("Faiz", "Android Developer",false,0));
-
 
         adapter = new MyAdapter(arrayList, this);
 

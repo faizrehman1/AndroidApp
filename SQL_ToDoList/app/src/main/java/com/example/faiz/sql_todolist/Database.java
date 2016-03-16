@@ -35,9 +35,7 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-//        String createTable= "CREATE TABLE " + TABLE_Name + "("
-//                + PERSON_ID + " INTEGER PRIMARY KEY," + PERSON_TITLE + " TEXT,"
-//                + PERSON_DISCRIPTION + " TEXT," + PERSON_STATUS + " TEXT" + ")";
+
         String sql = String.format("create table %s (%s INTEGER primary key AUTOINCREMENT,%s TEXT not null, %s TEXT , %s TEXT )",TABLE_Name,PERSON_ID,PERSON_TITLE,PERSON_DISCRIPTION,PERSON_STATUS);
 
         db.execSQL(sql);
@@ -53,11 +51,8 @@ public class Database extends SQLiteOpenHelper {
     public void saveData(ToDoObjects arrayList){
         SQLiteDatabase db = getWritableDatabase();
 
-
-      //  db.delete(TABLE_Name, null, null);
-
           ContentValues values = new ContentValues();
-           // values.put(PERSON_ID,arrayList.getId());
+
             values.put(PERSON_TITLE,arrayList.getTitle());
             values.put(PERSON_DISCRIPTION, arrayList.getDiscription());
             values.put(PERSON_STATUS, arrayList.getCheck());
@@ -79,7 +74,7 @@ public class Database extends SQLiteOpenHelper {
         String sql = String.format("select %s,%s,%s,%s from %s order by %s", PERSON_ID, PERSON_TITLE, PERSON_DISCRIPTION, PERSON_STATUS, TABLE_Name, PERSON_ID);
         Cursor cursor = db.rawQuery(sql, null);
 
-      //  int i=0;
+
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String title = cursor.getString(1);
@@ -88,7 +83,7 @@ public class Database extends SQLiteOpenHelper {
             Log.d("ID is ", "Msg:" + id);
             arrayList.add(new ToDoObjects(title, msg,Boolean.valueOf(checkBoxx),id));
 
-       // i++;
+
         }
 
 
