@@ -23,7 +23,7 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
     }
 
     @Override
-    public ToDoObjects getItem(int position) {
+    public Object getItem(int position) {
         return arrayList.get(position);
     }
 

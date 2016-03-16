@@ -6,9 +6,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableLayout;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,11 +33,32 @@ public class MainActivity extends AppCompatActivity {
 
         LayoutAdapter adapter = new LayoutAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         //is line se tablayout k neche jo shade araaha hai woh change hoga pageviewer k mutabik
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

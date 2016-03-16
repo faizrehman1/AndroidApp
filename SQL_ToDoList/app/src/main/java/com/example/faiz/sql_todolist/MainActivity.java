@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // collect(arrayList);
             GetTodo();
+
             addItems();
 
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //arrayList.add(new ToDoObjects("LOL", "Hahaaha", false));
     }
        private void addItems() {
+
 
             Button addToDobtn = (Button) findViewById(R.id.addbtn);
             addToDobtn.setOnClickListener(new View.OnClickListener() {
@@ -72,17 +74,11 @@ public class MainActivity extends AppCompatActivity {
                             db.saveData(email);
 
                             adapter.notifyDataSetChanged();
-                            //   db.getData();
-                            //   getTodo();
+
 
                         }
                     });
-                    alert.setNegativeButton("Back", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
+                    alert.setNegativeButton("Back",null);
 
                     alert.setView(view);
                     alert.show();
@@ -101,19 +97,36 @@ public class MainActivity extends AppCompatActivity {
 
     private void GetTodo(){
 
-       arrayList = db.getData();
+     //  arrayList = db.getData();
 //        adapter.notifyDataSetChanged();
         listView= (ListView) findViewById(R.id.listvieww);
-     //   arrayList = db.getData();
+        arrayList = db.getData();
      //   arrayList.add(new ToDoObjects("Faiz", "Android Developer",false,0));
-
 
 
         adapter = new MyAdapter(arrayList, this);
 
 
         listView.setAdapter(adapter);
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("YOu Want To Delete.?");
+                builder.setTitle("Delete");
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int id = arrayList.get(position).getId();
+                        arrayList.remove(position);
+                        db.deleteItem(id);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                builder.setNegativeButton("Back",null);
+                builder.show();
+            }
+        });
     }
 
 
