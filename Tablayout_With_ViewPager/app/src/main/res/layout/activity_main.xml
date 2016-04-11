@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="#fffdfe"
 
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -13,19 +13,20 @@
 
 
 
-
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="#fff"
-        android:background="#2721ef"
-        app:tabSelectedTextColor="#000"
-
+        android:background="#c778ef"
         android:elevation="6dp"
+        app:tabIndicatorColor="#dab2ff"
+        app:tabIndicatorHeight="5dp"
+        app:tabSelectedTextColor="#fffdfe"
+        app:tabTextColor="#000000"
 
         />
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
@@ -35,7 +36,6 @@
 
 
         />
-
 
 
 </RelativeLayout>

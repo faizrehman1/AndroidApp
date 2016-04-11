@@ -1,45 +1,73 @@
 package com.example.faiz.tablayout_with_viewpager;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TableLayout;
+import android.support.v7.widget.Toolbar;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     TabLayout tabLayout;
+    ArrayList<Fragment> fragments;
+    private Tab1 tab1;
+    private Tab2 tab2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        fragments=new ArrayList<>();
+        tab1=new Tab1();
+        fragments.add(tab1);
+        tab2=new Tab2();
+        fragments.add(tab2);
+        tabLayout.addTab(tabLayout.newTab().setText("ToDoList"));
+        tabLayout.addTab(tabLayout.newTab().setText("Completed"));
 
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 4"));
 
 
-        LayoutAdapter adapter = new LayoutAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        final LayoutAdapter adapter = new LayoutAdapter(getSupportFragmentManager(),fragments);
         //is line se tablayout k neche jo shade araaha hai woh change hoga pageviewer k mutabik
         viewPager.setAdapter(adapter);
+
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        /////Pehly kaha tha isko implement kero
+        viewPager.setOffscreenPageLimit(0);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                switch (tab.getPosition()){
+                    case 0:
+                        Tab1 t= (Tab1) fragments.get(0);
+                        t.refreshInvoked();
+                        break;
+                    case 1:
+                        Tab2 t2= (Tab2) fragments.get(1);
+                        t2.refreshInvoked();
+                        break;
+                    default:
+                        break;
+                }
             }
 
             @Override
@@ -60,25 +88,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

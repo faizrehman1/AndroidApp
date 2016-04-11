@@ -17,6 +17,7 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
     List<ToDoObjects> arrayList;
     Context context;
 
+
     @Override
     public int getCount() {
         return arrayList.size();
@@ -35,10 +36,11 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
     public MyAdapter(List<ToDoObjects> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.myview,null);
@@ -46,6 +48,8 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
         TextView text1= (TextView) view.findViewById(R.id.textView);
         TextView text2= (TextView) view.findViewById(R.id.textView2);
         CheckBox check = (CheckBox) view.findViewById(R.id.checkBox);
+
+
 
         text1.setText(arrayList.get(position).getTitle());
         text2.setText(arrayList.get(position).getDiscription());
@@ -55,4 +59,5 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
 
         return view;
     }
+
 }
