@@ -61,6 +61,7 @@ public class MyAdapter extends BaseAdapter {
                Check check = mainActivity;
                 check.checked(position,checkBox.isChecked());
 
+
             }
         });
 

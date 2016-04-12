@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         firebase = new Firebase("https://adnang.firebaseio.com/");
 
-
+        //set value in firebase
         firebase.child("fawad").setValue(new Message("Fawad", "Kahan ho?"));
         textView = (TextView) findViewById(R.id.aloo);
         textView1 = (TextView) findViewById(R.id.textView1);
 
+        //get value on firebase from child node whose name is =  fawad
         firebase.child("fawad").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

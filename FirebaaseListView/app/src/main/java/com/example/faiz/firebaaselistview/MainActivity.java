@@ -64,16 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         firebase.child("Data").addChildEventListener(new ChildEventListener() {
-           /* @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-              //  name.add(dataSnapshot.getValue().toString());
-                for (DataSnapshot children : dataSnapshot.getChildren()) {
 
-                    name.add(children.getValue().toString());
-                    adapter.notifyDataSetChanged();
-
-                }
-                }*/
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {

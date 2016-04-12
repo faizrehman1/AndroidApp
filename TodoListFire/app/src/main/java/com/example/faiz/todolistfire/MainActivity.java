@@ -142,8 +142,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
                                     if (i == position) {
                                         Firebase ref = dataSnapshot1.getRef();
                                         ref.removeValue();
-                                        //
-//                                        ref.child("check").setValue(true/false);
                                         Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
 
                                     }
@@ -156,8 +154,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
 
                             }
                         });
-
-
                     }
                 });
                 builder.setNegativeButton("Back", null);
@@ -200,13 +196,9 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int j = 0;
                 for (DataSnapshot m : dataSnapshot.getChildren()) {
-                    Firebase f = m.getRef(); //aise?aise!(y)try kero
+                    Firebase f = m.getRef();
                     if (j == position) {
-
                         f.child("check").setValue(!checked);
-                        //aagy continue kero me dekh raha hun...ghalat kia hai node reference sahi nahi hai
-                        //ok sahi karta hun //j++ if k
-
                     }
                     j++;
 
@@ -221,5 +213,5 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
 
     }
 }
-//  Log.d("Checked", "Pos " + position + " " + checked)
+
 
