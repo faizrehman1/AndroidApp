@@ -1,27 +1,27 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fbf6ff"
     tools:context="com.example.faiz.tablayout_with_viewpager.Tab1">
 
     <ListView
         android:id="@+id/listt"
         android:layout_width="match_parent"
-        android:layout_height="456dp">
+        android:layout_height="match_parent">
 
     </ListView>
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="20dp"
-        app:backgroundTint="#c778ef"
-        android:src="@android:drawable/ic_menu_edit" />
-
+        android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="#c778ef" />
 
 
 </FrameLayout>

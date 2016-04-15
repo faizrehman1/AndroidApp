@@ -35,9 +35,9 @@ public class Tab1 extends android.support.v4.app.Fragment {
     private ListView listView;
     private Button btn;
     private ListViewAdapter listViewAdapter;
-    private Database db;
+    private Database database1;
     Tab2 tab2;
-    private Database2 db2;
+    private Database2 database2;
     private FloatingActionButton floatingActionButton;
 
 
@@ -99,7 +99,7 @@ public class Tab1 extends android.support.v4.app.Fragment {
 
                         arrayList.add(email);
                         Log.d("haha", edt + " " + edt1);
-                        db.saveData(email);
+                        database1.saveData(email);
 
                         listViewAdapter.notifyDataSetChanged();
 
@@ -122,9 +122,9 @@ public class Tab1 extends android.support.v4.app.Fragment {
 
     public void getItem() {
 
-        db = new Database(getActivity().getApplicationContext());
-        db2 = new Database2(getActivity().getApplicationContext());
-        arrayList = db.getData();
+        database1 = new Database(getActivity().getApplicationContext());
+        database2 = new Database2(getActivity().getApplicationContext());
+        arrayList = database1.getData();
         listViewAdapter = new ListViewAdapter(arrayList, getActivity());
         listView.setAdapter(listViewAdapter);
         //  listViewAdapter.notifyDataSetChanged();
@@ -149,15 +149,12 @@ public class Tab1 extends android.support.v4.app.Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         ToDoObject toDoObject = arrayList.get(position);
-                        db2.saveData(toDoObject);
+                        database2.saveData(toDoObject);
                         refreshInvoked();
                         int idd = arrayList.get(position).getId();
                         arrayList.remove(position);
-                        db.deleteItem(idd);
+                        database1.deleteItem(idd);
                         listViewAdapter.notifyDataSetChanged();
-
-
-
 
                     }
                 });

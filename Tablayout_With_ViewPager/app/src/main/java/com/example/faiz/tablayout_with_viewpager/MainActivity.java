@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         fragments=new ArrayList<>();
@@ -38,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(tab1);
         tab2=new Tab2();
         fragments.add(tab2);
-        tabLayout.addTab(tabLayout.newTab().setText("ToDoList"));
-        tabLayout.addTab(tabLayout.newTab().setText("Completed"));
+        tabLayout.addTab(tabLayout.newTab().setText("ToDo Items"));
+        tabLayout.addTab(tabLayout.newTab().setText("Completed Items"));
 
 
 
