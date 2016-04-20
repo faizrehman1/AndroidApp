@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
                                         Firebase ref = dataSnapshot1.getRef();
                                         ref.removeValue();
                                         Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-
+                                        list.remove(position);
+                                        adapter.notifyDataSetChanged();
                                     }
                                     i++;
                                 }
