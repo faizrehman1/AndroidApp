@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.faiz.volleyexample.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/list_item"
+
+        android:layout_above="@+id/jsarray"
+
+
+        >
+
+
+
+    </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JSONOBject"
+        android:id="@+id/jsobjreq"
+
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/jsstrreq"
+        android:layout_toStartOf="@+id/jsstrreq" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JSONSTring"
+        android:id="@+id/jsstrreq"
+        android:layout_alignTop="@+id/jsobjreq"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JsonArray"
+        android:id="@+id/jsarray"
+        android:layout_alignBottom="@+id/jsstrreq"
+        android:layout_toRightOf="@+id/jsstrreq"
+        android:layout_toEndOf="@+id/jsstrreq" />
+
+
+</RelativeLayout>

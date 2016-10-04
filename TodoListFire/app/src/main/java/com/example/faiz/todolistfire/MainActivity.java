@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
         final String var = dateFormat.format(date);
 
 
-        listView = (ListView) findViewById(R.id.listView);
+                    listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
         btn = (Button) findViewById(R.id.button);
@@ -198,12 +198,16 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Check {
                 int j = 0;
                 for (DataSnapshot m : dataSnapshot.getChildren()) {
                     Firebase f = m.getRef();
+
                     if (j == position) {
-                        f.child("check").setValue(!checked);
+                        f.child("check").setValue(checked);
+
                     }
                     j++;
 
+
                 }
+
             }
 
             @Override

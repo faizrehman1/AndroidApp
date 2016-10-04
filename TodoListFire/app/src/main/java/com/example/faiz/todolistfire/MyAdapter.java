@@ -62,6 +62,7 @@ public class MyAdapter extends BaseAdapter {
                 check.checked(position,checkBox.isChecked());
 
 
+
             }
         });
 
@@ -70,6 +71,7 @@ public class MyAdapter extends BaseAdapter {
         text1.setText(message.get(position).getDiscription());
         text2.setText(message.get(position).getDate());
         checkBox.setChecked(message.get(position).isCheck());
+
 
 
         return v;

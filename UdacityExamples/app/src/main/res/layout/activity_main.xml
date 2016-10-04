@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    tools:context="com.example.faiz.udacityexamples.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Check"
+        android:textSize="30dp"
+
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textColor="#a23"
+        android:textSize="20dp"
+        android:id="@+id/text"
+        android:layout_marginBottom="50dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:onClick="yes"
+        android:background="#088f69"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SOmetimes"
+        android:onClick="sometimes"
+        android:layout_marginTop="30dp"
+        android:background="#d65e09"
+
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:onClick="no"
+        android:background="#d60909"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

@@ -50,14 +50,14 @@ public class MyAdapter extends BaseAdapter {
         inflater = (LayoutInflater) con.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        View v2 = inflater.inflate(R.layout.leftview, null);
-        View v = inflater.inflate(R.layout.rightview, null);
+        View leftView = inflater.inflate(R.layout.leftview, null);
+        View RightView = inflater.inflate(R.layout.rightview, null);
 
-        tt = (TextView) v2.findViewById(R.id.textViewLtime);
-        t = (TextView) v.findViewById(R.id.textViewRtime);
+        tt = (TextView) leftView.findViewById(R.id.textViewLtime);
+        t = (TextView) RightView.findViewById(R.id.textViewRtime);
 
-        ImageView imageViewL = (ImageView)v2.findViewById(R.id.imageViewL);
-        ImageView imageViewR = (ImageView)v.findViewById(R.id.imageViewR);
+        ImageView imageViewL = (ImageView)leftView.findViewById(R.id.imageViewL);
+        ImageView imageViewR = (ImageView)RightView.findViewById(R.id.imageViewR);
 
         imageViewL.setImageResource(R.drawable.faiz);
         imageViewR.setImageResource(R.drawable.moosa);
@@ -80,33 +80,27 @@ public class MyAdapter extends BaseAdapter {
         }
         time = hour + ":" + minute + " " + amPm;
 
-        TextView textViewLeftName = (TextView) v2.findViewById(R.id.textViewL);
-        TextView textViewLeftMessage = (TextView) v2.findViewById(R.id.textviewL2);
+        TextView textViewLeftName = (TextView) leftView.findViewById(R.id.textViewL);
+        TextView textViewLeftMessage = (TextView) leftView.findViewById(R.id.textviewL2);
 
-        TextView textViewRightName = (TextView) v.findViewById(R.id.textViewR);
-        TextView textViewRightMessage = (TextView) v.findViewById(R.id.textViewR2);
+        TextView textViewRightName = (TextView) RightView.findViewById(R.id.textViewR);
+        TextView textViewRightMessage = (TextView) RightView.findViewById(R.id.textViewR2);
 
         if (list.get(position).getName().equals("faiz")) {
-
-
-
 
             tt.setText(time);
 
             textViewLeftName.setText(list.get(position).getName());
             textViewLeftMessage.setText(list.get(position).getMessage());
 
-            return v2;
+            return leftView;
 
         } else {
-
-
-
             t.setText(time);
 
             textViewRightName.setText(list.get(position).getName().toString());
             textViewRightMessage.setText(list.get(position).getMessage());
-            return v;
+            return RightView;
 
         }
 

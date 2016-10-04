@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "970793126832",
+    "firebase_url": "https://newsreader-d9506.firebaseio.com",
+    "project_id": "newsreader-d9506",
+    "storage_bucket": "newsreader-d9506.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970793126832:android:dc9a35289500558e",
+        "android_client_info": {
+          "package_name": "com.example.faiz.news_reader_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970793126832-on5gu3639qf5ovl6ms7rrdcgv3uc1pod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4VcygZdpRJ-9P5R06MQCnsDqkaEZn1lA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

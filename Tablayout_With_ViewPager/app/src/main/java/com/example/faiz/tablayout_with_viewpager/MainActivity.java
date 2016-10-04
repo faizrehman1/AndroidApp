@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        /////Pehly kaha tha isko implement kero
+
         viewPager.setOffscreenPageLimit(0);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

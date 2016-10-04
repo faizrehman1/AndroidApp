@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     android:background="#fffdfe"
 
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context=".MainActivity">
 
 
@@ -18,9 +15,9 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#c778ef"
+        android:background="#7067f4"
         android:elevation="6dp"
-        app:tabIndicatorColor="#dab2ff"
+        app:tabIndicatorColor="#b2b5ff"
         app:tabIndicatorHeight="5dp"
         app:tabSelectedTextColor="#fffdfe"
         app:tabTextColor="#000000"

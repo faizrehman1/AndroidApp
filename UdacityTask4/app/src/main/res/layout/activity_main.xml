@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".Activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FD8E09"
+        android:padding="25dp"
+
+        android:text="Number"
+        android:textColor="#fff"
+
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#379237"
+        android:id="@+id/family"
+        android:padding="25dp"
+        android:text="Family Member"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8800A0"
+        android:padding="25dp"
+        android:text="Colors"
+        android:id="@+id/color"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#16AFCA"
+        android:padding="25dp"
+        android:text="Phrases"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:id="@+id/phrase"
+        android:textStyle="bold" />
+</LinearLayout>

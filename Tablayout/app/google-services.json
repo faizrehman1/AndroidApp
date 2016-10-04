@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "193093903535",
+    "firebase_url": "https://taskpana.firebaseio.com",
+    "project_id": "taskpana",
+    "storage_bucket": "taskpana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193093903535:android:7dc40f4db5ee8fe0",
+        "android_client_info": {
+          "package_name": "com.example.faiz.tablayout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193093903535-11ilv1vct2d3b0opcm6lbnkp7rb8hghr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ5Ht2mmmDsRax8Ej6-gEW6qiciBvt-V8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
